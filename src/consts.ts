@@ -1,7 +1,7 @@
 export const
   gameSize = 10;
 
-type ComponentTypes = 'or' | 'and';
+type ComponentTypes = 'and' | 'nand' | 'nor' | 'not' | 'or' | 'xnor' | 'xor';
 export type TileTypes = 'empty' | ComponentTypes;
 
 export interface Tile {
@@ -26,6 +26,11 @@ export class Component {
 }
 
 export const components = {
-  or: new Component('or', (a, b) => a || b),
   and: new Component('and', (a, b) => a && b),
+  nand: new Component('nand', (a, b) => !(a && b)),
+  nor: new Component('nor', (a, b) => (!a && !b)),
+  not: new Component('not', (a) => !a),
+  or: new Component('or', (a, b) => a || b),
+  xnor: new Component('xnor', (a, b) => (a && b) || (!a && !b)),
+  xor: new Component('xor', (a, b) => a !== b),
 } satisfies Record<ComponentTypes, Component>;
