@@ -24,13 +24,17 @@ html, body, #root {
   border: solid #000 .1vmin;
 
   > div {
-    height: 10vh;
-    width: 10vh;
-    margin: 2.5vh;
+    height: 7.5vh;
+    width: 14vh;
+    margin: 2.5vh .5vh;
     display: grid;
     place-content: center;
     border-radius: 1.25vh;
     cursor: pointer;
+
+    &:hover{
+      background-color: #eee;
+    }
 
     &.selected {
       cursor: initial;
