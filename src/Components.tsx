@@ -11,11 +11,18 @@ export default function Components(
     {(Object.entries(components) as [TileTypes, Component][])
       .map(([type, component]) =>
         <div
+          key={type}
           className={clsx({ selected: selected === type })}
           onClick={() => setSelected(type)}
         >
           <TileComponent tile={{ type }} />
         </div>
       )}
+    <div
+      className={clsx({ selected: selected === 'wire' })}
+      onClick={() => setSelected('wire')}
+    >
+      <TileComponent tile={{ type: 'wire' }} />
+    </div>
   </div>;
 }

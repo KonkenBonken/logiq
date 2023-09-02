@@ -2,7 +2,7 @@ export const
   gameSize = 10;
 
 type ComponentTypes = 'and' | 'nand' | 'nor' | 'not' | 'or' | 'xnor' | 'xor';
-export type TileTypes = 'empty' | ComponentTypes;
+export type TileTypes = 'empty' | 'wire' | ComponentTypes;
 
 export interface Tile {
   type: TileTypes,

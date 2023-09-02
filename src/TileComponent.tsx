@@ -6,6 +6,9 @@ export default function TileComponent({ tile }: { tile: { type: TileTypes } }) {
   if (tile.type === 'empty')
     return <></>;
 
+  if (tile.type === 'wire')
+    return <div className="wire" />;
+
   const component = components[tile.type];
 
   return <>
