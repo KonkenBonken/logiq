@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { gameSize, Tile, TileTypes } from './consts';
 import Components from './Components';
+import TileComponent from './TileComponent';
 
 const tiles: Tile[][] =
   Array.from({ length: gameSize }, (_, y) =>

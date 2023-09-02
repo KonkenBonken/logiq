@@ -39,21 +39,23 @@ html, body, #root {
   }
 }
   
-  main {
+main {
+  width: 100vh;
+  height: 100vh;
+  position: fixed;
+  background-color: #fff;
+  left: calc(50vw - 50vh);
+
+  > div {
     width: 100vh;
-    height: 100vh;
-    position: fixed;
-    background-color: #fff;
-    left: calc(50vw - 50vh);
-  
+    display: flex;
+
     > div {
-      width: 100vh;
-      display: flex;
-  
-      > div {
-        height: 10vh;
-        width: 10vh;
-        border: solid #000 .1vmin;
-      }
+      height: 10vh;
+      width: 10vh;
+      border: solid #000 .1vmin;
+      display: grid;
+      place-content: center;
     }
+  }
 }
