@@ -8,5 +8,10 @@ export default function TileComponent({ tile }: { tile: { type: TileTypes } }) {
 
   const component = components[tile.type];
 
-  return <img src={component.imgSrc} alt={tile.type + ' gate'} />;
+  return <>
+    <img src={component.imgSrc} alt={tile.type + ' gate'} />
+    {Array.from({ length: component.inputCount }, (_, i) =>
+      <i key={i} />
+    )}
+  </>;
 }
