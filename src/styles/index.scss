@@ -15,6 +15,29 @@ html, body, #root {
   border: solid #000 .1vmin;
 }
 
+#components {
+  position: fixed;
+  width: 15vh;
+  height: 100vh;
+  right: 0;
+  background-color: #fff;
+  border: solid #000 .1vmin;
+
+  > div {
+    height: 10vh;
+    width: 10vh;
+    margin: 2.5vh;
+    display: grid;
+    place-content: center;
+    border-radius: 1.25vh;
+    cursor: pointer;
+
+    &.selected {
+      cursor: initial;
+      background-color: #ddd;
+    }
+  }
+}
   
   main {
     width: 100vh;
