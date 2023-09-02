@@ -21,6 +21,14 @@ export default function Main() {
     });
   }
 
+  function onTileRightClick(x: number, y: number, e: React.MouseEvent) {
+    e.preventDefault();
+    setTiles(tiles => {
+      tiles[y][x].type = 'empty';
+      return tiles.slice();
+    });
+  }
+
   return <>
     <div id="table" />
     <Components selected={[selected, setSelected]} />
@@ -29,7 +37,8 @@ export default function Main() {
         <div key={row[0].y}>
           {row.map(tile =>
             <div key={tile.x}
-              onClick={() => onTileClick(tile.x, tile.y)}>
+              onClick={() => onTileClick(tile.x, tile.y)}
+              onContextMenu={(e) => onTileRightClick(tile.x, tile.y, e)}>
               <TileComponent
                 tile={tile} key={tile.x} />
             </div>
