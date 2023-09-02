@@ -13,11 +13,14 @@ const tiles: Tile[][] =
     ));
 
 export default function Main() {
-  return <main>
-    {tiles.map(row =>
-      <div key={row[0].y}>{row.map(tile =>
-        <TileComponent tile={tile} key={tile.x} />
-      )}</div>
-    )}
-  </main>;
+  return <>
+    <div id="table" />
+    <main>
+      {tiles.map(row =>
+        <div key={row[0].y}>{row.map(tile =>
+          <TileComponent tile={tile} key={tile.x} />
+        )}</div>
+      )}
+    </main>
+  </>;
 }
