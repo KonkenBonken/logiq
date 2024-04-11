@@ -83,32 +83,30 @@ main {
       }
 
       > i {
-        width: .5vh;
-        height: 2vh;
+        width: .75vh;
+        height: .75vh;
         background-color: green;
         display: block;
         position: absolute;
-        bottom: -1vh;
-        left: 5vh - .25vh;
+        bottom: 0;
+        left: 5vh - .75vh;
 
         &:first-of-type:last-of-type {
-          width: 2vh;
-          height: .5vh;
-          left: -1vh;
-          top: 5vh - .25vh;
+          left: 0;
+          top: 5vh - .75vh;
         }
 
         & + i:last-of-type {
-          top: -1vh;
-          left: 5vh - .25vh;
+          top: 0;
+          left: 5vh - .75vh;
         }
       }
 
       > b {
-        width: 2vh;
-        height: .5vh;
-        right: -1vh;
-        top: 5vh - .25vh;
+        width: .75vh;
+        height: .75vh;
+        right: 0;
+        top: 5vh - .75vh;
         background-color: darkred;
         display: block;
         position: absolute;
@@ -121,20 +119,20 @@ main {
 
         &::before, &::after {
           content: '';
-          height: .5vh;
+          height: .75vh;
           width: 10vh;
           background-color: darkred;
           display: block;
           position: absolute;
-          top: 5vh - .25vh;
+          top: 5vh - .75vh*.5;
           left: 0;
         }
 
         &::after {
           height: 10vh;
-          width: .5vh;
+          width: .75vh;
           top: 0;
-          left: 5vh - .25vh;
+          left: 5vh - .75vh*.5;
         }
       }
     }
