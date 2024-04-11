@@ -16,5 +16,6 @@ export default function TileComponent({ tile }: { tile: { type: TileTypes } }) {
     {Array.from({ length: component.inputCount }, (_, i) =>
       <i key={i} />
     )}
+    <b />
   </>;
 }
