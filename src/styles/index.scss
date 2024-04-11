@@ -7,6 +7,7 @@ html, body, #root {
   min-height: 100vh;
   background-color: #eee;
 }
+
 #table {
   position: fixed;
   width: 30vh;
@@ -32,7 +33,7 @@ html, body, #root {
     border-radius: 1.25vh;
     cursor: pointer;
     position: relative;
-    
+
     > .wire::after {
       content: '';
       height: .5vh;
@@ -41,11 +42,10 @@ html, body, #root {
       display: block;
       position: absolute;
       top: (7.5vh - .5vh) * .5;
-      left: (14vh - 10vh) * .5 ;
+      left: (14vh - 10vh) * .5;
     }
 
-
-    &:hover{
+    &:hover {
       background-color: #eee;
     }
 
@@ -55,7 +55,7 @@ html, body, #root {
     }
   }
 }
-  
+
 main {
   width: 100vh;
   height: 100vh;
