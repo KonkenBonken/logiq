@@ -4,6 +4,8 @@ import { gameSize, Tile, TileTypes } from './consts';
 import Components from './Components';
 import TileComponent from './TileComponent';
 
+const Source = ({ type: 'src', x: 0, y: 0 }) satisfies Tile;
+
 export default function Main() {
   const
     [tiles, setTiles] = useState<Tile[][]>(
@@ -11,6 +13,8 @@ export default function Main() {
         Array.from({ length: gameSize }, (_, x) =>
           ({ type: 'empty', x, y })
         )));
+
+  tiles[Source.y][Source.x] = Source;
 
   const [selected, setSelected] = useState<TileTypes | undefined>();
 
@@ -42,7 +46,7 @@ export default function Main() {
               <TileComponent
                 tile={tile} key={tile.x} />
             </div>
-        )}</div>
+          )}</div>
       )}
     </main>
   </>;

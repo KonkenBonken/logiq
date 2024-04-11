@@ -1,11 +1,12 @@
 export const
   gameSize = 10;
 
-type ComponentTypes = 'and' | 'nand' | 'nor' | 'not' | 'or' | 'xnor' | 'xor';
+type ComponentTypes = 'src' | 'and' | 'nand' | 'nor' | 'not' | 'or' | 'xnor' | 'xor';
 export type TileTypes = 'empty' | 'wire' | ComponentTypes;
 
 export interface Tile {
   type: TileTypes,
+  tail?: Tile[],
   x: number,
   y: number
 }
@@ -26,6 +27,7 @@ export class Component {
 }
 
 export const components = {
+  src: new Component('and', () => true),
   and: new Component('and', (a, b) => a && b),
   nand: new Component('nand', (a, b) => !(a && b)),
   nor: new Component('nor', (a, b) => (!a && !b)),
